@@ -541,7 +541,7 @@ The **Registry Service** acts as the **service discovery server** for the MicroB
 The API Gateway serves as the single entry point for all client requests. It routes requests to the appropriate microservice (e.g., Account Service, Customer Service) and handles concerns like routing, load balancing, and service discovery.
 
 ### Dependencies Used
-- **Gateway - Spring Cloud Routing**
+- **Reactive Gateway - Spring Cloud Routing**
 - **Eureka Discovery Client - Spring Cloud Discovery**
 - **Spring Boot Actuator - OPS**
 
@@ -556,6 +556,10 @@ The API Gateway serves as the single entry point for all client requests. It rou
 - `/account/**` → routed to Account Service
 
 ![img_16.png](assets/img_16.png)
+
+![img_17.png](assets/img_17.png)
+
+![img_18.png](assets/img_18.png)
 
 
 
