@@ -22,11 +22,11 @@
 
 The platform is designed for horizontal scalability and easy integration of new services. Planned enhancements include:
 
-- 🔍 **Eureka Server** for service discovery and dynamic registration.
-- 🚪 **Spring Cloud Gateway** to handle routing, filtering, and authorization.
-- ⚖️ **Reactive LoadBalancer** to distribute requests across service instances.
-- 🔐 **Token-based Authentication** for secure access control (future).
-- 📁 **Centralized Configuration** using Spring Cloud Config (future enhancement).
+- **Eureka Server** for service discovery and dynamic registration.
+- **Spring Cloud Gateway** to handle routing, filtering, and authorization.
+- **Reactive LoadBalancer** to distribute requests across service instances.
+- **Token-based Authentication** for secure access control (future).
+- **Centralized Configuration** using Spring Cloud Config (future enhancement).
 
 > MicroBank360 aims to be a production-grade, extensible microservice banking application reflecting real-world enterprise architecture practices.
 
