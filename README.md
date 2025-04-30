@@ -116,7 +116,7 @@ GET /customer
   }
 ]
 ```
-![img_2.png](img_2.png)
+![img_2.png](assets/img_2.png)
 
 ---
 
@@ -137,7 +137,7 @@ GET /customer/1
   "createdAt": "2025-04-29T10:00:00"
 }
 ```
-![img_1.png](img_1.png)
+![img_1.png](assets/img_1.png)
 
 ---
 
@@ -168,7 +168,7 @@ POST /customer
 }
 ```
 
-![img.png](img.png)
+![img.png](assets/img.png)
 
 ---
 
@@ -198,7 +198,7 @@ PUT /customer/1
   "createdAt": "2025-04-29T10:00:00"
 }
 ```
-![img_3.png](img_3.png)
+![img_3.png](assets/img_3.png)
 
 ---
 
@@ -213,8 +213,8 @@ DELETE /customer/1
 ```
 Customer 1 gets Deleted from Database.
 ```
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
+![img_4.png](assets/img_4.png)
+![img_5.png](assets/img_5.png)
 ---
 
 ### 6. Get all accounts
@@ -245,7 +245,7 @@ GET /account
   }
 ]
 ```
-![img_7.png](img_7.png)
+![img_7.png](assets/img_7.png)
 
 ---
 
@@ -267,7 +267,7 @@ GET /account/1
     "createdAt": "2025-04-29T10:30:00"
   }
 ```
-![img_8.png](img_8.png)
+![img_8.png](assets/img_8.png)
 
 ---
 
@@ -299,7 +299,7 @@ POST /account
   "createdAt": "2025-04-29T12:30:00"
 }
 ```
-![img_6.png](img_6.png)
+![img_6.png](assets/img_6.png)
 
 ---
 
@@ -321,7 +321,7 @@ PUT /account/1/15000
   "createdAt": "2025-04-29T10:30:00"
 }
 ```
-![img_9.png](img_9.png)
+![img_9.png](assets/img_9.png)
 
 ---
 
@@ -336,5 +336,5 @@ DELETE /account/1
 ```
 Account 1 gets Deleted from Database.
 ```
-![img_10.png](img_10.png)
-![img_11.png](img_11.png)
+![img_10.png](assets/img_10.png)
+![img_11.png](assets/img_11.png)
