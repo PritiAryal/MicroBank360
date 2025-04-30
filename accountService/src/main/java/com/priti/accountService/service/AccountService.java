@@ -8,6 +8,7 @@ public interface AccountService {
     Account createAccount(Account account);
     Account getAccountById(Long id);
     List<Account> getAllAccounts();
+    List<Account> getAccountsOfCustomer(Long customerId);
     Account updateAccountBalance(Long id, BigDecimal balance);
     void deleteAccount(Long id);
 }

@@ -30,6 +30,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public List<Account> getAccountsOfCustomer(Long customerId) {
+        return this.accountRepository.findByCustomerId(customerId);
+    }
+
+    @Override
     public Account updateAccountBalance(Long id, BigDecimal balance) {
         Account account = this.accountRepository.findById(id).orElse(null);
         if(account != null) {

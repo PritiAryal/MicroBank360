@@ -338,3 +338,129 @@ Account 1 gets Deleted from Database.
 ```
 ![img_10.png](assets/img_10.png)
 ![img_11.png](assets/img_11.png)
+
+---
+
+### 11. Get all accounts by CUSTOMER ID using AccountService
+**Request:**
+
+```http
+GET /account/customer/1
+```
+
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "accountNumber": "ACC1001",
+    "accountType": "SAVINGS",
+    "balance": 15000.00,
+    "customerId": 1,
+    "createdAt": "2025-04-29T10:30:00"
+  },
+  {
+    "id": 3,
+    "accountNumber": "ACC1003",
+    "accountType": "SAVINGS",
+    "balance": 3000.00,
+    "customerId": 1,
+    "createdAt": "2025-04-29T12:30:00"
+  }
+]
+```
+![img_12.png](assets/img_12.png)
+
+---
+
+### 12. Get all user info along with their account info using Openfeign for inter service communication
+
+**Request:**
+
+```http
+GET /customer/
+```
+
+**Response:**
+```json
+[
+    {
+        "id": 2,
+        "name": "Jane",
+        "email": "jane@example.com",
+        "phone": "+0987654321",
+        "createdAt": "2025-04-29T22:09:45.811707",
+        "accounts": []
+    },
+    {
+        "id": 3,
+        "name": "Alice",
+        "email": "alice@example.com",
+        "phone": "+1122334455",
+        "createdAt": "2025-04-29T22:30:50.51107",
+        "accounts": [
+            {
+                "id": 2,
+                "accountNumber": "ACC1002",
+                "accountType": "CURRENT",
+                "balance": 2500.00,
+                "customerId": 3,
+                "createdAt": "2025-04-29T22:32:40.04309"
+            },
+            {
+                "id": 3,
+                "accountNumber": "ACC1001",
+                "accountType": "SAVINGS",
+                "balance": 15000.00,
+                "customerId": 3,
+                "createdAt": "2025-04-29T23:17:04.860544"
+            }
+        ]
+    }
+]
+```
+![img.png](assets/img_13.png)
+
+---
+### 13. Get one user info along with account info using Openfeign for inter service communication
+**Request:**
+
+```http
+GET /customer/3
+```
+
+**Response:**
+```json
+{
+    "id": 3,
+    "name": "Alice",
+    "email": "alice@example.com",
+    "phone": "+1122334455",
+    "createdAt": "2025-04-29T22:30:50.51107",
+    "accounts": [
+        {
+            "id": 2,
+            "accountNumber": "ACC1002",
+            "accountType": "CURRENT",
+            "balance": 2500.00,
+            "customerId": 3,
+            "createdAt": "2025-04-29T22:32:40.04309"
+        },
+        {
+            "id": 3,
+            "accountNumber": "ACC1001",
+            "accountType": "SAVINGS",
+            "balance": 15000.00,
+            "customerId": 3,
+            "createdAt": "2025-04-29T23:17:04.860544"
+        }
+    ]
+}
+```
+![img_1.png](assets/img_14.png)
+
+---
+
+
+
+

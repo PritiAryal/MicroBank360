@@ -24,6 +24,11 @@ public class AccountController {
         return this.accountService.getAccountById(id);
     }
 
+    @GetMapping("/customer/{customerId}")
+    private List<Account> getAccountsOfCustomer(@PathVariable Long customerId) {
+        return this.accountService.getAccountsOfCustomer(customerId);
+    }
+
     @PostMapping
     public Account createAccount(@RequestBody Account account) {
         return this.accountService.createAccount(account);
