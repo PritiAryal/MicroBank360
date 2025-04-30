@@ -1,7 +1,38 @@
+# MicroBank360 - A Scalable Microservices-Based Banking Platform
 
-# Customer and Account Service - Full-Stack Microservices
+**MicroBank360** is a modular, scalable banking platform built using the **Microservice Architecture** with **Java Spring Boot**. It simulates core banking functionalities such as customer and account management and is designed to grow with additional services like transactions, notifications, and authentication.
 
+---
+---
 ## Overview
+
+### Key Features
+
+- **Customer Service & Account Service** – Independent microservices with full CRUD operations.
+- **Spring Data JPA** – Simplified database interaction via repositories.
+- **RESTful APIs** – Structured and consistent API endpoints.
+- **OpenFeign** – Declarative REST client for seamless inter-service communication.
+- **Eureka (Planned)** – Service discovery and registration for dynamic scaling.
+- **Spring Cloud API Gateway (Planned)** – Centralized routing and request handling.
+- **Reactive LoadBalancer (Planned)** – Client-side load balancing for resilient service calls.
+- **MySQL** – Robust data persistence layer.
+- **Postman-Tested** – All endpoints verified through Postman.
+
+### Architecture Vision
+
+The platform is designed for horizontal scalability and easy integration of new services. Planned enhancements include:
+
+- 🔍 **Eureka Server** for service discovery and dynamic registration.
+- 🚪 **Spring Cloud Gateway** to handle routing, filtering, and authorization.
+- ⚖️ **Reactive LoadBalancer** to distribute requests across service instances.
+- 🔐 **Token-based Authentication** for secure access control (future).
+- 📁 **Centralized Configuration** using Spring Cloud Config (future enhancement).
+
+> MicroBank360 aims to be a production-grade, extensible microservice banking application reflecting real-world enterprise architecture practices.
+
+---
+---
+## Customer and Account Service - Core Service
 
 This project contains two microservices built using Java, Spring Boot:
 
