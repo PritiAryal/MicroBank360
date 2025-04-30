@@ -214,7 +214,9 @@ DELETE /customer/1
 Customer 1 gets Deleted from Database.
 ```
 ![img_4.png](assets/img_4.png)
+
 ![img_5.png](assets/img_5.png)
+
 ---
 
 ### 6. Get all accounts
@@ -299,6 +301,7 @@ POST /account
   "createdAt": "2025-04-29T12:30:00"
 }
 ```
+
 ![img_6.png](assets/img_6.png)
 
 ---
