@@ -45,7 +45,7 @@ Both services use Spring Data JPA with MySQL for persistent storage.
 - Backend: Java, Spring Boot, Spring Data JPA
 - Database: MySQL
 - Build Tool: Maven
-- Dependencies: Spring Web, Spring Data JPA, MySQL Connector, Lombok
+- Dependencies: Spring Web, Spring Data JPA, MySQL Connector, Lombok(there are further dependencies that i will update below)
 - Testing API: Postman
 - Version Control: GitHub
 - Other Tools: IntelliJ IDEA, MySQL Workbench
@@ -491,9 +491,42 @@ GET /customer/3
     ]
 }
 ```
-![img_1.png](assets/img_14.png)
+![img_14.png](assets/img_14.png)
 
 ---
+
+---
+---
+## Registry Server - Eureka Server
+
+The **Registry Service** acts as the **service discovery server** for the MicroBank360 platform. Built using **Spring Cloud Netflix Eureka**, it enables all microservices to register themselves at runtime and discover each other without hard-coded hostnames or ports.
+
+### Key Features
+
+- Centralized **Service Discovery**
+- Dynamic registration and de-registration of microservices
+- Enables **client-side load balancing** (via OpenFeign and Spring Cloud LoadBalancer)
+- Simplifies inter-service communication
+
+### How It Works
+
+1. When microservices (like Customer Service or Account Service) start, they **register themselves** to the Eureka server.
+2. Other services can then **discover these instances dynamically** using their service name.
+3. Eureka keeps a **heartbeat** to remove inactive services.
+
+### Dependencies Used
+
+#### Registry Service (Eureka Server)
+- **Spring Web**
+- **Spring Cloud Netflix Eureka Server**
+
+#### Added more dependencies to Client Services (Customer Service, Account Service)
+- **Spring Cloud OpenFeign**
+- **Spring Cloud LoadBalancer**
+- **Spring Cloud Netflix Eureka Client**
+
+![img_15.png](assets/img_15.png)
+
 
 
 
