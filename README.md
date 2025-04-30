@@ -86,11 +86,10 @@ Both services use Spring Data JPA with MySQL for persistent storage.
 
 ### 1. Clone the Repositories
 
-Clone both services from GitHub:
+Clone all services from GitHub:
 
 ```bash
-git clone https://github.com/your-username/customer-service.git
-git clone https://github.com/your-username/account-service.git
+git clone https://github.com/PritiAryal/MicroBank360.git
 ```
 
 ### 2. Configure application.properties
@@ -99,7 +98,7 @@ Update the following in both services:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/{your_db_name}
-spring.datasource.username=root
+spring.datasource.username=your_username
 spring.datasource.password=your_password
 ```
 
@@ -108,7 +107,7 @@ spring.datasource.password=your_password
 Open both projects in IntelliJ IDEA:
 
 - Ensure JDK 17 or above is selected.
-- Run the main classes:
+- Run all the main classes of each services such as(you can also run multiple instances of same service to see how load balancing works):
   - `CustomerServiceApplication.java`
   - `AccountServiceApplication.java`
 
@@ -121,7 +120,6 @@ Open both projects in IntelliJ IDEA:
 
 - Ensure MySQL Server is running and the database exists.
 - Update port configurations if needed to avoid conflicts.
-- Add screenshots and usage examples to enhance the documentation if necessary.
 
 ---
 
