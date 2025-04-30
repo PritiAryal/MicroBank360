@@ -6,7 +6,7 @@
 
 ---
 
-## Overview
+## I. Project Overview
 
 ### Key Features
 
@@ -36,7 +36,7 @@ The platform is designed for horizontal scalability and easy integration of new 
 
 ---
 
-## Customer and Account Service - Core Service
+## II. Customer and Account Service - Core Service
 
 This project contains two microservices built using Java, Spring Boot:
 
@@ -58,13 +58,14 @@ Both services use Spring Data JPA with MySQL for persistent storage.
 
 ## Customer Service - API Endpoints
 
-| Method | Endpoint             | Description                       |
-|--------|----------------------|-----------------------------------|
-| GET    | /customer            | Get all customers                 |
-| GET    | /customer/{id}       | Get customer by ID                |
-| POST   | /customer            | Create a new customer             |
-| PUT    | /customer/{id}       | Update a customer's data by ID    |
-| DELETE | /customer/{id}       | Delete a customer by ID           |
+| Method | Endpoint             | Description                                                |
+|--------|----------------------|------------------------------------------------------------|
+| GET    | /customer            | Get all customers(Updated: Along with account info)        |
+| GET    | /customer/{id}       | Get customer by ID(Updated: Along with their account info) |
+| POST   | /customer            | Create a new customer                                      |
+| PUT    | /customer/{id}       | Update a customer's data by ID                             |
+| DELETE | /customer/{id}       | Delete a customer by ID                                    |
+
 
 ---
 
@@ -77,6 +78,7 @@ Both services use Spring Data JPA with MySQL for persistent storage.
 | POST   | /account             | Create a new account                  |
 | PUT    | /account/{id}/{balance} | Update account balance by ID         |
 | DELETE | /account/{id}        | Delete account by ID                  |
+| GET    | /account/customer/{customerId} | Get all accounts by customer ID  |
 
 ---
 
@@ -125,54 +127,91 @@ Open both projects in IntelliJ IDEA:
 
 ## Usage Examples
 
-### 1. Get all customers
+### 1. Get all Customer - along with their account info using Openfeign for inter service communication
+
 **Request:**
 
 ```http
-GET /customer
+GET /customer/
 ```
 
 **Response:**
 ```json
 [
-  {
-    "id": 1,
-    "name": "John",
-    "email": "john@example.com",
-    "phone": "+1234567890",
-    "createdAt": "2025-04-29T10:00:00"
-  },
-  {
-    "id": 2,
-    "name": "Jane",
-    "email": "jane@example.com",
-    "phone": "+0987654321",
-    "createdAt": "2025-04-28T15:30:00"
-  }
+    {
+        "id": 2,
+        "name": "Jane",
+        "email": "jane@example.com",
+        "phone": "+0987654321",
+        "createdAt": "2025-04-29T22:09:45.811707",
+        "accounts": []
+    },
+    {
+        "id": 3,
+        "name": "Alice",
+        "email": "alice@example.com",
+        "phone": "+1122334455",
+        "createdAt": "2025-04-29T22:30:50.51107",
+        "accounts": [
+            {
+                "id": 2,
+                "accountNumber": "ACC1002",
+                "accountType": "CURRENT",
+                "balance": 2500.00,
+                "customerId": 3,
+                "createdAt": "2025-04-29T22:32:40.04309"
+            },
+            {
+                "id": 3,
+                "accountNumber": "ACC1001",
+                "accountType": "SAVINGS",
+                "balance": 15000.00,
+                "customerId": 3,
+                "createdAt": "2025-04-29T23:17:04.860544"
+            }
+        ]
+    }
 ]
 ```
-![img_2.png](assets/img_2.png)
+![img.png](assets/img_13.png)
 
 ---
-
-### 2. Get Customer by ID
+### 2. Get Customer by ID - along with account info using Openfeign for inter service communication
 **Request:**
 
 ```http
-GET /customer/1
+GET /customer/3
 ```
 
 **Response:**
 ```json
 {
-  "id": 1,
-  "name": "John",
-  "email": "john@example.com",
-  "phone": "+1234567890",
-  "createdAt": "2025-04-29T10:00:00"
+    "id": 3,
+    "name": "Alice",
+    "email": "alice@example.com",
+    "phone": "+1122334455",
+    "createdAt": "2025-04-29T22:30:50.51107",
+    "accounts": [
+        {
+            "id": 2,
+            "accountNumber": "ACC1002",
+            "accountType": "CURRENT",
+            "balance": 2500.00,
+            "customerId": 3,
+            "createdAt": "2025-04-29T22:32:40.04309"
+        },
+        {
+            "id": 3,
+            "accountNumber": "ACC1001",
+            "accountType": "SAVINGS",
+            "balance": 15000.00,
+            "customerId": 3,
+            "createdAt": "2025-04-29T23:17:04.860544"
+        }
+    ]
 }
 ```
-![img_1.png](assets/img_1.png)
+![img_14.png](assets/img_14.png)
 
 ---
 
@@ -411,98 +450,9 @@ GET /account/customer/1
 
 ---
 
-### 12. Get all user info along with their account info using Openfeign for inter service communication
-
-**Request:**
-
-```http
-GET /customer/
-```
-
-**Response:**
-```json
-[
-    {
-        "id": 2,
-        "name": "Jane",
-        "email": "jane@example.com",
-        "phone": "+0987654321",
-        "createdAt": "2025-04-29T22:09:45.811707",
-        "accounts": []
-    },
-    {
-        "id": 3,
-        "name": "Alice",
-        "email": "alice@example.com",
-        "phone": "+1122334455",
-        "createdAt": "2025-04-29T22:30:50.51107",
-        "accounts": [
-            {
-                "id": 2,
-                "accountNumber": "ACC1002",
-                "accountType": "CURRENT",
-                "balance": 2500.00,
-                "customerId": 3,
-                "createdAt": "2025-04-29T22:32:40.04309"
-            },
-            {
-                "id": 3,
-                "accountNumber": "ACC1001",
-                "accountType": "SAVINGS",
-                "balance": 15000.00,
-                "customerId": 3,
-                "createdAt": "2025-04-29T23:17:04.860544"
-            }
-        ]
-    }
-]
-```
-![img.png](assets/img_13.png)
-
----
-### 13. Get one user info along with account info using Openfeign for inter service communication
-**Request:**
-
-```http
-GET /customer/3
-```
-
-**Response:**
-```json
-{
-    "id": 3,
-    "name": "Alice",
-    "email": "alice@example.com",
-    "phone": "+1122334455",
-    "createdAt": "2025-04-29T22:30:50.51107",
-    "accounts": [
-        {
-            "id": 2,
-            "accountNumber": "ACC1002",
-            "accountType": "CURRENT",
-            "balance": 2500.00,
-            "customerId": 3,
-            "createdAt": "2025-04-29T22:32:40.04309"
-        },
-        {
-            "id": 3,
-            "accountNumber": "ACC1001",
-            "accountType": "SAVINGS",
-            "balance": 15000.00,
-            "customerId": 3,
-            "createdAt": "2025-04-29T23:17:04.860544"
-        }
-    ]
-}
-```
-![img_14.png](assets/img_14.png)
-
-
 ---
 
----
-
-## Registry Server - Eureka Server
+## III. Registry Server - Eureka Server
 
 The **Registry Service** acts as the **service discovery server** for the MicroBank360 platform. Built using **Spring Cloud Netflix Eureka**, it enables all microservices to register themselves at runtime and discover each other without hard-coded hostnames or ports.
 
@@ -536,7 +486,7 @@ The **Registry Service** acts as the **service discovery server** for the MicroB
 
 ---
 
-## API Gateway 
+## IV. API Gateway 
 
 The API Gateway serves as the single entry point for all client requests. It routes requests to the appropriate microservice (e.g., Account Service, Customer Service) and handles concerns like routing, load balancing, and service discovery.
 
