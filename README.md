@@ -3,7 +3,9 @@
 **MicroBank360** is a modular, scalable banking platform built using the **Microservice Architecture** with **Java Spring Boot**. It simulates core banking functionalities such as customer and account management and is designed to grow with additional services like transactions, notifications, and authentication.
 
 ---
+
 ---
+
 ## Overview
 
 ### Key Features
@@ -31,7 +33,9 @@ The platform is designed for horizontal scalability and easy integration of new 
 > MicroBank360 aims to be a production-grade, extensible microservice banking application reflecting real-world enterprise architecture practices.
 
 ---
+
 ---
+
 ## Customer and Account Service - Core Service
 
 This project contains two microservices built using Java, Spring Boot:
@@ -493,10 +497,11 @@ GET /customer/3
 ```
 ![img_14.png](assets/img_14.png)
 
+
 ---
 
 ---
----
+
 ## Registry Server - Eureka Server
 
 The **Registry Service** acts as the **service discovery server** for the MicroBank360 platform. Built using **Spring Cloud Netflix Eureka**, it enables all microservices to register themselves at runtime and discover each other without hard-coded hostnames or ports.
@@ -518,14 +523,40 @@ The **Registry Service** acts as the **service discovery server** for the MicroB
 
 #### Registry Service (Eureka Server)
 - **Spring Web**
-- **Spring Cloud Netflix Eureka Server**
+- **Spring Cloud Discovery - Eureka Server**
 
 #### Added more dependencies to Client Services (Customer Service, Account Service)
 - **Spring Cloud OpenFeign**
 - **Spring Cloud LoadBalancer**
-- **Spring Cloud Netflix Eureka Client**
+- **Eureka Discovery Client - Spring Cloud Discovery**
 
 ![img_15.png](assets/img_15.png)
+
+---
+
+---
+
+## API Gateway 
+
+The API Gateway serves as the single entry point for all client requests. It routes requests to the appropriate microservice (e.g., Account Service, Customer Service) and handles concerns like routing, load balancing, and service discovery.
+
+### Dependencies Used
+- **Gateway - Spring Cloud Routing**
+- **Eureka Discovery Client - Spring Cloud Discovery**
+- **Spring Boot Actuator - OPS**
+
+### Responsibilities
+- Route incoming requests to corresponding microservices based on configured paths
+- Enable client-side load balancing using Spring Cloud LoadBalancer
+- Discover services dynamically via Eureka Server
+- Centralize cross-cutting concerns (e.g., logging, authentication, rate limiting – to be added as needed)
+
+### Sample Routes
+- `/customer/**` → routed to Customer Service
+- `/account/**` → routed to Account Service
+
+![img_16.png](assets/img_16.png)
+
 
 
 
