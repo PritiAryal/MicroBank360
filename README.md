@@ -14,9 +14,9 @@
 - **Spring Data JPA** – Simplified database interaction via repositories.
 - **RESTful APIs** – Structured and consistent API endpoints.
 - **OpenFeign** – Declarative REST client for seamless inter-service communication.
-- **Eureka (Planned)** – Service discovery and registration for dynamic scaling.
-- **Spring Cloud API Gateway (Planned)** – Centralized routing and request handling.
-- **Reactive LoadBalancer (Planned)** – Client-side load balancing for resilient service calls.
+- **Eureka** – Service discovery and registration for dynamic scaling.
+- **Spring Cloud API Gateway** – Centralized routing and request handling.
+- **Reactive LoadBalancer** – Client-side load balancing for resilient service calls.
 - **MySQL** – Robust data persistence layer.
 - **Postman-Tested** – All endpoints verified through Postman.
 
