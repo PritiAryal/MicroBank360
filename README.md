@@ -8,6 +8,8 @@
 
 ## I. Project Overview
 
+### Architecture: [View Architecture Design](https://pritiaryal.github.io/MicroBank360ArchitectureDesign/)
+
 ### Key Features
 
 - **Customer Service & Account Service** – Independent microservices with full CRUD operations.
