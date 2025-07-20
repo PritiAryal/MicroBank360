@@ -21,6 +21,15 @@
 - **Reactive LoadBalancer** – Client-side load balancing for resilient service calls.
 - **MySQL** – Robust data persistence layer.
 - **Postman-Tested** – All endpoints verified through Postman.
+- **Data Seeder Microservice** – Automated, realistic test data generation for customers and accounts.
+- **DataFaker Library** – Authentic, randomized data for development and testing.
+- **Batch Processing** – Bulk creation with configurable batch sizes.
+- **CSV Export** – Generates customer, account, and JMeter-ready datasets. 
+- **Circuit Breaker (Resilience4j)** – Fault tolerance for robust operations. 
+- **WebFlux** – Non-blocking, reactive endpoints for high performance. 
+- **API Request Collections** – Ready-to-use HTTP and REST files for IntelliJ, VS Code, and Postman. 
+- **JMeter Performance Test** – Automated performance testing with multiple scenarios and reporting. 
+- **Shell Scripts** – One-command execution for test automation and reporting.
 
 ### Architecture Vision
 
