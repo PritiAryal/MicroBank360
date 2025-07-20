@@ -1,0 +1,50 @@
+### Seed 500 customers
+POST http://localhost:8085/seed/customers/250
+Content-Type: application/json
+
+###
+
+### Seed accounts for existing customers
+POST http://localhost:8085/seed/accounts?minAccountsPerCustomer=1&maxAccountsPerCustomer=2
+Content-Type: application/json
+
+###
+
+### Seed full dataset
+POST http://localhost:8085/seed/full-dataset?customerCount=300&minAccountsPerCustomer=1&maxAccountsPerCustomer=2
+Content-Type: application/json
+
+###
+
+### Export combined JMeter-ready test data as CSV
+GET http://localhost:8085/seed/export/jmeter-data.csv
+Accept: text/csv
+
+###
+
+### Export all customers as CSV
+GET http://localhost:8085/seed/export/customers.csv
+Accept: text/csv
+
+###
+
+### Export all accounts as CSV
+GET http://localhost:8085/seed/export/accounts.csv
+Accept: text/csv
+
+###
+
+### Get seed stats
+GET http://localhost:8085/seed/stats
+Accept: application/json
+
+###
+
+### Cleanup all seed data
+DELETE http://localhost:8085/seed/cleanup
+
+###
+
+### Health check
+GET http://localhost:8085/seed/health
+Accept: application/json

@@ -1,0 +1,455 @@
+2025-07-20 02:59:50,983 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2025-07-20 02:59:51,013 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2025-07-20 02:59:51,014 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2025-07-20 02:59:51,022 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: Version 5.6.3
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: java.version=21.0.7
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: os.name=Windows 11
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: os.arch=amd64
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: os.version=10.0
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: file.encoding=UTF-8
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: java.awt.headless=null
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: Max memory     =1073741824
+2025-07-20 02:59:51,023 INFO o.a.j.JMeter: Available Processors =8
+2025-07-20 02:59:51,035 INFO o.a.j.JMeter: Default Locale=English (EN)
+2025-07-20 02:59:51,035 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2025-07-20 02:59:51,035 INFO o.a.j.JMeter: JMeterHome=C:\Users\priti\Downloads\MicroBank360\jmeter-tests\apache-jmeter-5.6.3
+2025-07-20 02:59:51,035 INFO o.a.j.JMeter: user.dir  =C:\Users\priti\Downloads\MicroBank360\jmeter-tests\apache-jmeter-5.6.3\bin
+2025-07-20 02:59:51,036 INFO o.a.j.JMeter: PWD       =C:\Users\priti\Downloads\MicroBank360\jmeter-tests\apache-jmeter-5.6.3\bin
+2025-07-20 02:59:51,055 INFO o.a.j.JMeter: IP: 192.168.1.179 Name: piti FullName: piti.lan
+2025-07-20 02:59:51,103 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2025-07-20 02:59:51,398 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: laf:com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+2025-07-20 03:00:20,062 INFO o.a.j.s.FileServer: Default base='C:\Users\priti\Downloads\MicroBank360\jmeter-tests\apache-jmeter-5.6.3\bin'
+2025-07-20 03:00:20,067 INFO o.a.j.g.a.Load: Loading file: C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx
+2025-07-20 03:00:20,067 INFO o.a.j.s.FileServer: Set new base='C:\Users\priti\Downloads\MicroBank360\jmeter-tests'
+2025-07-20 03:00:20,303 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2025-07-20 03:00:20,353 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2025-07-20 03:00:20,354 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2025-07-20 03:00:20,355 INFO o.a.j.s.SaveService: Loading file: C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx
+2025-07-20 03:00:20,384 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-07-20 03:00:20,384 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-07-20 03:00:20,384 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-07-20 03:00:20,384 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-07-20 03:00:20,384 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2025-07-20 03:00:20,384 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2025-07-20 03:00:20,507 WARN o.a.j.g.a.Load: Unexpected error. java.util.NoSuchElementException: Property HTTPsampler.Arguments is unset for element org.apache.jmeter.config.ConfigTestElement@4d026da1
+java.util.NoSuchElementException: Property HTTPsampler.Arguments is unset for element org.apache.jmeter.config.ConfigTestElement@4d026da1
+	at org.apache.jmeter.testelement.TestElement.get(TestElement.kt:452) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.protocol.http.config.gui.UrlConfigGui.configure(UrlConfigGui.java:285) ~[ApacheJMeter_http.jar:5.6.3]
+	at org.apache.jmeter.protocol.http.config.gui.HttpDefaultsGui.configure(HttpDefaultsGui.java:166) ~[ApacheJMeter_http.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:162) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:00:20,517 ERROR o.a.j.u.JMeterUtils: Property HTTPsampler.Arguments is unset for element org.apache.jmeter.config.ConfigTestElement@4d026da1
+2025-07-20 03:05:09,158 ERROR o.a.j.g.a.ActionRouter: performAction(edit) updateCurrentGui() onjava.awt.event.ActionEvent[unknown type,cmd=edit,when=0,modifiers=] on org.apache.jmeter.gui.tree.JMeterTreeListener@20f10e99 caused
+java.lang.NullPointerException: Cannot invoke "org.apache.jmeter.testelement.TestElement.getName()" because "element" is null
+	at org.apache.jmeter.gui.AbstractJMeterGuiComponent.configure(AbstractJMeterGuiComponent.java:213) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.gui.ArgumentsPanel.configure(ArgumentsPanel.java:323) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.configure(TestPlanGui.java:192) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.refreshCurrentGui(GuiPackage.java:469) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.updateCurrentGui(GuiPackage.java:453) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:75) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:05:09,195 ERROR o.a.j.u.JMeterUtils: Problem updating GUI - see log file for details
+2025-07-20 03:05:09,202 ERROR o.a.j.g.GuiPackage: Problem retrieving current gui
+java.lang.NullPointerException: Cannot invoke "org.apache.jmeter.testelement.TestElement.getName()" because "element" is null
+	at org.apache.jmeter.gui.AbstractJMeterGuiComponent.configure(AbstractJMeterGuiComponent.java:213) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.gui.ArgumentsPanel.configure(ArgumentsPanel.java:323) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.configure(TestPlanGui.java:192) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getCurrentGui(GuiPackage.java:308) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.EditCommand.doAction(EditCommand.java:47) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:05:09,260 ERROR o.a.j.g.GuiPackage: Problem retrieving current gui
+java.lang.NullPointerException: Cannot invoke "org.apache.jmeter.testelement.TestElement.getName()" because "element" is null
+	at org.apache.jmeter.gui.AbstractJMeterGuiComponent.configure(AbstractJMeterGuiComponent.java:213) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.gui.ArgumentsPanel.configure(ArgumentsPanel.java:323) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.configure(TestPlanGui.java:192) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getCurrentGui(GuiPackage.java:308) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.util.MenuFactory.addFileMenu(MenuFactory.java:307) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.createPopupMenu(TestPlanGui.java:124) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeNode.createPopupMenu(JMeterTreeNode.java:184) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.EditCommand.doAction(EditCommand.java:49) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:05:16,671 ERROR o.a.j.g.GuiPackage: Problem retrieving current gui
+java.lang.NullPointerException: Cannot invoke "org.apache.jmeter.testelement.TestElement.getName()" because "element" is null
+	at org.apache.jmeter.gui.AbstractJMeterGuiComponent.configure(AbstractJMeterGuiComponent.java:213) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.gui.ArgumentsPanel.configure(ArgumentsPanel.java:323) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.configure(TestPlanGui.java:192) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getCurrentGui(GuiPackage.java:308) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.util.MenuFactory.addFileMenu(MenuFactory.java:307) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.createPopupMenu(TestPlanGui.java:124) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeNode.createPopupMenu(JMeterTreeNode.java:184) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeListener.displayPopUp(JMeterTreeListener.java:246) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeListener.mousePressed(JMeterTreeListener.java:188) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:288) ~[?:?]
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6618) ~[?:?]
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3398) ~[?:?]
+	at java.desktop/java.awt.Component.processEvent(Component.java:6386) ~[?:?]
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266) ~[?:?]
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4996) ~[?:?]
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324) ~[?:?]
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828) ~[?:?]
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948) ~[?:?]
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4572) ~[?:?]
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516) ~[?:?]
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310) ~[?:?]
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780) ~[?:?]
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98) ~[?:?]
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747) ~[?:?]
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:05:21,740 ERROR o.a.j.g.a.ActionRouter: performAction(open) updateCurrentGui() onjava.awt.event.ActionEvent[ACTION_PERFORMED,cmd=open,when=1752995121734,modifiers=Button1] on open caused
+java.lang.NullPointerException: Cannot invoke "org.apache.jmeter.testelement.TestElement.getName()" because "element" is null
+	at org.apache.jmeter.gui.AbstractJMeterGuiComponent.configure(AbstractJMeterGuiComponent.java:213) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.gui.ArgumentsPanel.configure(ArgumentsPanel.java:323) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.configure(TestPlanGui.java:192) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.refreshCurrentGui(GuiPackage.java:469) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.updateCurrentGui(GuiPackage.java:453) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:75) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:05:21,741 ERROR o.a.j.u.JMeterUtils: Problem updating GUI - see log file for details
+2025-07-20 03:05:25,411 ERROR o.a.j.g.a.ActionRouter: performAction(check_dirty) updateCurrentGui() onjava.awt.event.ActionEvent[ACTION_PERFORMED,cmd=check_dirty,when=0,modifiers=] on open caused
+java.lang.NullPointerException: Cannot invoke "org.apache.jmeter.testelement.TestElement.getName()" because "element" is null
+	at org.apache.jmeter.gui.AbstractJMeterGuiComponent.configure(AbstractJMeterGuiComponent.java:213) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.gui.ArgumentsPanel.configure(ArgumentsPanel.java:323) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.configure(TestPlanGui.java:192) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.refreshCurrentGui(GuiPackage.java:469) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.updateCurrentGui(GuiPackage.java:453) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:75) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.doActionNow(ActionRouter.java:120) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Close.performAction(Close.java:82) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:86) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:05:25,412 ERROR o.a.j.u.JMeterUtils: Problem updating GUI - see log file for details
+2025-07-20 03:05:25,415 ERROR o.a.j.g.a.ActionRouter: performAction(stop_thread) updateCurrentGui() onjava.awt.event.ActionEvent[ACTION_PERFORMED,cmd=stop_thread,when=0,modifiers=] on open caused
+java.lang.NullPointerException: Cannot invoke "org.apache.jmeter.testelement.TestElement.getName()" because "element" is null
+	at org.apache.jmeter.gui.AbstractJMeterGuiComponent.configure(AbstractJMeterGuiComponent.java:213) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.gui.ArgumentsPanel.configure(ArgumentsPanel.java:323) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.configure(TestPlanGui.java:192) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.refreshCurrentGui(GuiPackage.java:469) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.updateCurrentGui(GuiPackage.java:453) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:75) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.doActionNow(ActionRouter.java:120) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Close.performAction(Close.java:102) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:86) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-07-20 03:05:25,416 ERROR o.a.j.u.JMeterUtils: Problem updating GUI - see log file for details
+2025-07-20 03:05:25,449 INFO o.a.j.g.a.Load: Loading file: C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx
+2025-07-20 03:05:25,450 INFO o.a.j.s.FileServer: Set new base='C:\Users\priti\Downloads\MicroBank360\jmeter-tests'
+2025-07-20 03:05:25,451 INFO o.a.j.s.SaveService: Loading file: C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx
+2025-07-20 03:05:25,532 WARN o.a.j.g.a.Load: Unexpected error. java.lang.IllegalArgumentException: Problem loading XML from:'C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx'. 
+Cause:
+EOFException: no more data available - expected end tags </hashTree></hashTree></jmeterTestPlan> to close start tag <hashTree> from line 34 and start tag <hashTree> from line 3 and start tag <jmeterTestPlan> from line 2, parser stopped on END_TAG seen ...\r\n\r\n... @322:1
+
+ Detail:com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.converters.ConversionException
+cause-message       : 
+first-jmeter-class  : org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66)
+class               : org.apache.jmeter.save.ScriptWrapper
+required-type       : org.apache.jmeter.save.ScriptWrapper
+converter-type      : org.apache.jmeter.save.ScriptWrapperConverter
+path                : /jmeterTestPlan/hashTree/hashTree
+line number         : 322
+version             : 5.6.3
+-------------------------------
+java.lang.IllegalArgumentException: Problem loading XML from:'C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx'. 
+Cause:
+EOFException: no more data available - expected end tags </hashTree></hashTree></jmeterTestPlan> to close start tag <hashTree> from line 34 and start tag <hashTree> from line 3 and start tag <jmeterTestPlan> from line 2, parser stopped on END_TAG seen ...\r\n\r\n... @322:1
+
+ Detail:com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.converters.ConversionException
+cause-message       : 
+first-jmeter-class  : org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66)
+class               : org.apache.jmeter.save.ScriptWrapper
+required-type       : org.apache.jmeter.save.ScriptWrapper
+converter-type      : org.apache.jmeter.save.ScriptWrapperConverter
+path                : /jmeterTestPlan/hashTree/hashTree
+line number         : 322
+version             : 5.6.3
+-------------------------------
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:456) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.save.SaveService.loadTree(SaveService.java:429) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.converters.ConversionException
+cause-message       : 
+first-jmeter-class  : org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66)
+class               : org.apache.jmeter.save.ScriptWrapper
+required-type       : org.apache.jmeter.save.ScriptWrapper
+converter-type      : org.apache.jmeter.save.ScriptWrapperConverter
+path                : /jmeterTestPlan/hashTree/hashTree
+line number         : 322
+version             : 5.6.3
+-------------------------------
+	at org.apache.jmeter.save.ScriptWrapperConverter.createConversionException(ScriptWrapperConverter.java:101) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.save.ScriptWrapperConverter.unmarshal(ScriptWrapperConverter.java:95) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1321) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:446) ~[ApacheJMeter_core.jar:5.6.3]
+	... 20 more
+Caused by: com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.io.StreamException
+cause-message       : 
+class               : org.apache.jorphan.collections.ListedHashTree
+required-type       : org.apache.jorphan.collections.ListedHashTree
+converter-type      : org.apache.jmeter.save.converters.HashTreeConverter
+path                : /jmeterTestPlan/hashTree/hashTree
+line number         : 322
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:81) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.ScriptWrapperConverter.unmarshal(ScriptWrapperConverter.java:93) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1321) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:446) ~[ApacheJMeter_core.jar:5.6.3]
+	... 20 more
+Caused by: com.thoughtworks.xstream.io.StreamException: 
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:126) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent(AbstractPullReader.java:148) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent(AbstractPullReader.java:135) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren(AbstractPullReader.java:87) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.ReaderWrapper.hasMoreChildren(ReaderWrapper.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:64) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.ScriptWrapperConverter.unmarshal(ScriptWrapperConverter.java:93) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1321) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:446) ~[ApacheJMeter_core.jar:5.6.3]
+	... 20 more
+Caused by: java.io.EOFException: no more data available - expected end tags </hashTree></hashTree></jmeterTestPlan> to close start tag <hashTree> from line 34 and start tag <hashTree> from line 3 and start tag <jmeterTestPlan> from line 2, parser stopped on END_TAG seen ...\r\n\r\n... @322:1
+	at io.github.xstream.mxparser.MXParser.fillBuf(MXParser.java:3079) ~[mxparser-1.2.2.jar:1.2.2]
+	at io.github.xstream.mxparser.MXParser.more(MXParser.java:3089) ~[mxparser-1.2.2.jar:1.2.2]
+	at io.github.xstream.mxparser.MXParser.nextImpl(MXParser.java:1395) ~[mxparser-1.2.2.jar:1.2.2]
+	at io.github.xstream.mxparser.MXParser.next(MXParser.java:1104) ~[mxparser-1.2.2.jar:1.2.2]
+	at com.thoughtworks.xstream.io.xml.XppReader.pullNextEvent(XppReader.java:109) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readRealEvent(AbstractPullReader.java:148) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.readEvent(AbstractPullReader.java:135) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.xml.AbstractPullReader.hasMoreChildren(AbstractPullReader.java:87) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.io.ReaderWrapper.hasMoreChildren(ReaderWrapper.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:64) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readBareItem(AbstractCollectionConverter.java:132) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.ScriptWrapperConverter.unmarshal(ScriptWrapperConverter.java:93) ~[ApacheJMeter_core.jar:5.6.3]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1464) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1441) ~[xstream-1.4.20.jar:1.4.20]
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1321) ~[xstream-1.4.20.jar:1.4.20]
+	at org.apache.jmeter.save.SaveService.readTree(SaveService.java:446) ~[ApacheJMeter_core.jar:5.6.3]
+	... 20 more
+2025-07-20 03:05:25,537 ERROR o.a.j.u.JMeterUtils: Problem loading XML from:'C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx'. 
+Cause:
+EOFException: no more data available - expected end tags </hashTree></hashTree></jmeterTestPlan> to close start tag <hashTree> from line 34 and start tag <hashTree> from line 3 and start tag <jmeterTestPlan> from line 2, parser stopped on END_TAG seen ...\r\n\r\n... @322:1
+
+ Detail:com.thoughtworks.xstream.converters.ConversionException: 
+---- Debugging information ----
+cause-exception     : com.thoughtworks.xstream.converters.ConversionException
+cause-message       : 
+first-jmeter-class  : org.apache.jmeter.save.converters.HashTreeConverter.unmarshal(HashTreeConverter.java:66)
+class               : org.apache.jmeter.save.ScriptWrapper
+required-type       : org.apache.jmeter.save.ScriptWrapper
+converter-type      : org.apache.jmeter.save.ScriptWrapperConverter
+path                : /jmeterTestPlan/hashTree/hashTree
+line number         : 322
+version             : 5.6.3
+-------------------------------
+2025-07-20 03:06:10,171 INFO o.a.j.g.a.Load: Loading file: C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx
+2025-07-20 03:06:10,171 INFO o.a.j.s.FileServer: Set new base='C:\Users\priti\Downloads\MicroBank360\jmeter-tests'
+2025-07-20 03:06:10,171 INFO o.a.j.s.SaveService: Loading file: C:\Users\priti\Downloads\MicroBank360\jmeter-tests\microservices-load-test.jmx
+2025-07-20 03:06:10,619 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2025-07-20 03:06:10,619 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2025-07-20 03:06:10,619 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2025-07-20 03:06:10,619 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2025-07-20 03:06:10,920 INFO o.a.j.s.FileServer: Set new base='C:\Users\priti\Downloads\MicroBank360\jmeter-tests'

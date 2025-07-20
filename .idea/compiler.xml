@@ -11,6 +11,7 @@
         <module name="registryService" />
         <module name="customerService" />
         <module name="accountService" />
+        <module name="dataSeederService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="apiGateway" options="-parameters" />
       <module name="customerService" options="-parameters" />
+      <module name="dataSeederService" options="-parameters" />
       <module name="registryService" options="-parameters" />
     </option>
   </component>

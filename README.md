@@ -511,7 +511,43 @@ The API Gateway serves as the single entry point for all client requests. It rou
 
 ![img_18.png](assets/img_18.png)
 
+---
 
+---
+
+## V. Data Seeder
+Dedicated Data Seeder microservice module to generate realistic test data for JMeter performance testing, following best practices.
+
+## Requirements
+
+### Architecture Goals
+- Separate microservice for data seeding operations
+- Remove seeding logic from production services (Customer & Account services)
+- Generate consistent, realistic test data for performance testing
+- Export data in multiple formats (JSON, CSV) for JMeter consumption
+
+### Technical Requirements
+1. **New SpringBoot Module**: `dataSeederService`
+2. **Database Access**: Direct access to both Customer and Account databases
+3. **Data Generation**: Use DataFaker for realistic test data
+4. **Bulk Operations**: Support for generating 1000+ records efficiently
+5. **Export Capabilities**: Generate CSV files for JMeter data sets
+6. **Service Communication**: WebClient for validating services after seeding
+
+### Configuration
+- Separate application.properties for multiple database connections
+- Profile-specific configurations (dev, test, performance)
+- Configurable batch sizes for optimal performance
+
+### Benefits
+-  Production safety - no seeding code in business services
+-  Performance testing ready
+-  Follows industry standards
+-  Better separation of concerns
+-  Centralized data generation logic
+---
+
+---
 
 
 
