@@ -19,7 +19,7 @@ set -euo pipefail
 # Script Configuration
 readonly SCRIPT_VERSION="1.0"
 readonly SCRIPT_AUTHOR="PritiAryal"
-readonly SCRIPT_DATE="2025-07-20 07:47:05 UTC"
+readonly SCRIPT_DATE="2025-07-20 07:47:05 EST"
 readonly JMX_FILE="microbank360-performance-test.jmx"
 
 # Command line parameters

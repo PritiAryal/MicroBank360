@@ -29,6 +29,8 @@ The platform is designed for horizontal scalability and easy integration of new 
 - **Eureka Server** for service discovery and dynamic registration.
 - **Spring Cloud Gateway** to handle routing, filtering, and authorization.
 - **Reactive LoadBalancer** to distribute requests across service instances.
+- **Data Seeder Service** for realistic test data generation and export.
+- **Performance Testing Suite** with JMeter automation.
 - **Token-based Authentication** for secure access control (future).
 - **Centralized Configuration** using Spring Cloud Config (future enhancement).
 
@@ -515,40 +517,313 @@ The API Gateway serves as the single entry point for all client requests. It rou
 
 ---
 
-## V. Data Seeder
-Dedicated Data Seeder microservice module to generate realistic test data for JMeter performance testing, following best practices.
+## V. Data Seeder Service
 
-## Requirements
+The **Data Seeder Service** is a dedicated microservice designed to generate realistic test data for performance testing and development environments. It provides API-based data generation with export capabilities for JMeter testing.
 
-### Architecture Goals
-- Separate microservice for data seeding operations
-- Remove seeding logic from production services (Customer & Account services)
-- Generate consistent, realistic test data for performance testing
-- Export data in multiple formats (JSON, CSV) for JMeter consumption
+### Key Features
 
-### Technical Requirements
-1. **New SpringBoot Module**: `dataSeederService`
-2. **Database Access**: Direct access to both Customer and Account databases
-3. **Data Generation**: Use DataFaker for realistic test data
-4. **Bulk Operations**: Support for generating 1000+ records efficiently
-5. **Export Capabilities**: Generate CSV files for JMeter data sets
-6. **Service Communication**: WebClient for validating services after seeding
+- **API-Based Data Generation**: RESTful endpoints for creating customers and accounts
+- **Realistic Data**: Uses DataFaker library for generating authentic-looking test data
+- **Batch Processing**: Supports bulk creation with configurable batch sizes
+- **Export Capabilities**: Generates CSV files optimized for JMeter consumption
+- **Circuit Breaker**: Resilience4j integration for fault tolerance
+- **Service Discovery**: Integrates with Eureka for dynamic service communication
+- **Reactive Programming**: Uses WebFlux for non-blocking, asynchronous operations
 
-### Configuration
-- Separate application.properties for multiple database connections
-- Profile-specific configurations (dev, test, performance)
-- Configurable batch sizes for optimal performance
+### Architecture Components
+
+#### Configuration
+- **Port**: 8088
+- **Service Name**: DATA-SEEDER-SERVICE
+- **Database**: Communicates with existing Customer and Account services
+- **Circuit Breaker**: Configured with Resilience4j for fault tolerance
+
+#### Key Dependencies
+- Spring Boot Web & WebFlux
+- Spring Cloud Netflix Eureka Client
+- Spring Cloud Circuit Breaker (Resilience4j)
+- Spring Cloud LoadBalancer
+- DataFaker (for realistic data generation)
+- OpenCSV (for CSV export functionality)
+
+### Data Seeder API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/seed/customers/{count}` | Generate specified number of customers |
+| POST | `/seed/accounts` | Generate accounts for existing customers |
+| POST | `/seed/full-dataset` | Generate complete dataset (customers + accounts) |
+| GET | `/seed/export/jmeter-data.csv` | Export JMeter-ready combined data as CSV |
+| GET | `/seed/export/customers.csv` | Export all customers as CSV |
+| GET | `/seed/export/accounts.csv` | Export all accounts as CSV |
+| GET | `/seed/stats` | Get seeding statistics |
+| GET | `/seed/health` | Health check endpoint |
+| DELETE | `/seed/cleanup` | Clean up all seeded data |
+
 
 ### Benefits
--  Production safety - no seeding code in business services
--  Performance testing ready
--  Follows industry standards
--  Better separation of concerns
--  Centralized data generation logic
----
+- **Production Safety**: No seeding code in business services
+- **Performance Testing Ready**: Optimized for JMeter data consumption
+- **Industry Standards**: Follows microservice best practices
+- **Separation of Concerns**: Centralized data generation logic
+- **Fault Tolerance**: Circuit breaker patterns for resilient operations
 
 ---
 
+---
+
+## VI. API Request Collections
+
+The **apiRequests** directory contains organized HTTP request collections for testing all microservices. These collections provide ready-to-use API calls for development and testing.
+
+### Data Seeder Service Requests
+
+The `seed.http` file contains comprehensive API requests for the Data Seeder Service:
+
+#### Sample Requests
+
+**Generate Customers:**
+```http
+### Seed 500 customers
+POST http://localhost:8085/seed/customers/250
+Content-Type: application/json
+```
+![img.png](assets/dataseed%20and%20test/img.png)
+![img_1.png](assets/dataseed%20and%20test/img_1.png)
+
+
+**Generate Accounts:**
+```http
+### Seed accounts for existing customers
+POST http://localhost:8085/seed/accounts?minAccountsPerCustomer=1&maxAccountsPerCustomer=2
+Content-Type: application/json
+```
+
+![img_2.png](assets/dataseed%20and%20test/img_2.png)
+![img_3.png](assets/dataseed%20and%20test/img_3.png)
+
+**Generate Full Dataset:**
+```http
+### Seed full dataset
+POST http://localhost:8085/seed/full-dataset?customerCount=300&minAccountsPerCustomer=1&maxAccountsPerCustomer=2
+Content-Type: application/json
+```
+
+![img_4.png](assets/dataseed%20and%20test/img_4.png)
+
+**Export Data for JMeter:**
+```http
+### Export combined JMeter-ready test data as CSV
+GET http://localhost:8085/seed/export/jmeter-data.csv
+Accept: text/csv
+```
+![img_5.png](assets/dataseed%20and%20test/img_5.png)
+![img_6.png](assets/dataseed%20and%20test/img_6.png)
+
+**Statistics Check:**
+```http
+### Statistics check
+GET http://localhost:8085/seed/stat
+Accept: application/json
+```
+
+![img_7.png](assets/dataseed%20and%20test/img_7.png)
+
+**Cleanup Seeded Data:**
+```http
+### Cleanup all seeded data
+DELETE http://localhost:8085/seed/cleanup
+```
+![img_8.png](assets/dataseed%20and%20test/img_8.png)
+
+### Usage
+- Compatible with IntelliJ IDEA HTTP Client
+- Compatible with VS Code REST Client extension
+- Ready-to-execute requests for rapid development and testing
+
+---
+
+---
+
+## VII. Performance Testing Suite - JMeter Tests
+
+The **jmeter-tests** directory contains a comprehensive performance testing suite designed for the MicroBank360 banking platform.
+
+### Key Features
+
+- **Professional Test Scripts**: Industry-standard JMeter test plans
+- **Multiple Test Scenarios**: Baseline, Load, Stress, and Spike testing
+- **Automated Execution**: Shell scripts for different testing scenarios
+- **Realistic Data Sets**: CSV files with banking test data
+- **Comprehensive Reporting**: Detailed performance metrics and HTML reports
+- **Configurable Parameters**: Flexible test configuration via command-line parameters
+
+### Test Suite Components
+
+#### Test Scripts
+
+1. **microbank360-performance-test.jmx**
+  - Main professional performance test suite
+  - Configurable parameters (threads, duration, ramp-up)
+  - Supports multiple test scenarios
+
+2. **foolproof-test.jmx**
+  - Simple test for validation
+  - Basic health checks and API calls
+
+![img_11.png](assets/dataseed%20and%20test/img_11.png)
+![img_12.png](assets/dataseed%20and%20test/img_12.png)
+
+#### Execution Scripts
+
+1. **run-microbank360-tests.sh**
+  - Comprehensive test runner with multiple scenarios
+  - Professional reporting and metrics
+  - Supports baseline, load, stress, and spike tests
+
+2. **quick-microbank360-test.sh**
+  - Quick validation testing
+  - Minimal setup for rapid feedback
+
+![img_10.png](assets/dataseed%20and%20test/img_10.png)
+
+#### Test Data Files
+
+1. **customers.csv** - Sample customer data with realistic information
+2. **accounts.csv** - Account data with various account types and balances
+3. **jmeter_testdata.csv** - Combined customer-account data for JMeter consumption
+
+### Test Scenarios
+
+| Scenario | Virtual Users | Duration | Ramp-up | Expected TPS | Description |
+|----------|---------------|----------|---------|--------------|-------------|
+| Baseline | 10 | 180s | 30s | 5 | Minimal load baseline |
+| Load | 25 | 300s | 60s | 15 | Normal production load |
+| Stress | 100 | 300s | 90s | 50 | High stress testing |
+| Spike | 200 | 120s | 20s | 100 | Traffic spike simulation |
+
+### Test Endpoints Coverage
+
+The performance tests cover critical banking endpoints:
+
+- **Health Checks**: `/seed/health`
+- **Customer Operations**: `/customer/{id}`
+- **Account Operations**: `/account/{id}`
+- **Customer-Account Relations**: Various customer and account combinations
+
+### Reporting Features
+
+- **Real-time Metrics**: Live performance monitoring during test execution
+- **CSV Results**: Raw data for detailed analysis
+- **Pass/Fail Criteria**: Automated test validation with success thresholds
+
+### Professional Features
+
+- **Progress Tracking**: Real-time test execution progress
+- **Error Handling**: Robust error detection and reporting
+- **Configurable Thresholds**: Customizable success criteria
+- **Batch Processing**: Efficient handling of large test datasets
+
+---
+
+---
+
+## How to Set Up the Complete Project
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/PritiAryal/MicroBank360.git
+cd MicroBank360
+```
+
+### 2. Configure Database Connections
+
+Update the following in all service application.properties files:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/{your_db_name}
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+```
+
+### 3. Build & Run All Services
+
+Start services in the following order:
+
+1. **Registry Service (Eureka Server)**
+   ```bash
+   cd registryService
+   mvn spring-boot:run
+   ```
+
+2. **Customer Service**
+   ```bash
+   cd customerService
+   mvn spring-boot:run
+   ```
+
+3. **Account Service**
+   ```bash
+   cd accountService
+   mvn spring-boot:run
+   ```
+
+4. **API Gateway**
+   ```bash
+   cd gatewayService
+   mvn spring-boot:run
+   ```
+
+5. **Data Seeder Service**
+   ```bash
+   cd dataSeederService
+   mvn spring-boot:run
+   ```
+
+### 4. Generate Test Data
+
+Use the Data Seeder Service to populate your database:
+
+```http
+POST http://localhost:8088/seed/full-dataset?customerCount=100&minAccountsPerCustomer=1&maxAccountsPerCustomer=3
+```
+
+### 5. Run Performance Tests
+
+Make sure Jmeter is installed and Navigate to the jmeter-tests directory and run:
+
+```bash
+cd jmeter-tests
+./run-microbank360-tests.sh
+```
+
+### 6. Test API Endpoints
+
+- Use the HTTP files in **apiRequests** directory with IntelliJ IDEA or VS Code
+- Use **Postman** for manual API testing
+- Check **Eureka Dashboard** at http://localhost:8761 for service registration
+
+### Service Ports
+
+| Service | Port |
+|---------|------|
+| Registry Service (Eureka) | 8761 |
+| Customer Service | 8082 |
+| Account Service | 8080 |
+| API Gateway | 8084 |
+| Data Seeder Service | 8088 |
+
+### Notes
+
+- Ensure MySQL Server is running and databases exist
+- All services will register with Eureka automatically
+- API Gateway provides unified access to all services
+- Use Data Seeder Service for generating realistic test data
+- Performance tests require JMeter to be installed or available in the jmeter-tests directory
+
+---
 
 
 
