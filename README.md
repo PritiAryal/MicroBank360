@@ -28,7 +28,7 @@
 - **Circuit Breaker (Resilience4j)** – Fault tolerance for robust operations. 
 - **WebFlux** – Non-blocking, reactive endpoints for high performance. 
 - **API Request Collections** – Ready-to-use HTTP and REST files for IntelliJ, VS Code, and Postman. 
-- **JMeter Performance Test** – Automated performance testing with multiple scenarios and reporting. 
+- **JMeter Performance and load Test** – Automated performance and load testing with multiple scenarios and reporting. 
 - **Shell Scripts** – One-command execution for test automation and reporting.
 
 ### Architecture Vision
@@ -39,7 +39,7 @@ The platform is designed for horizontal scalability and easy integration of new 
 - **Spring Cloud Gateway** to handle routing, filtering, and authorization.
 - **Reactive LoadBalancer** to distribute requests across service instances.
 - **Data Seeder Service** for realistic test data generation and export.
-- **Performance Testing Suite** with JMeter automation.
+- **Performance and load Testing** with JMeter automation.
 - **Token-based Authentication** for secure access control (future).
 - **Centralized Configuration** using Spring Cloud Config (future enhancement).
 
@@ -673,7 +673,7 @@ The **jmeter-tests** directory contains a comprehensive performance testing suit
 #### Test Scripts
 
 1. **microbank360-performance-test.jmx**
-  - Main professional performance test suite
+  - Main professional performance and load test suite
   - Configurable parameters (threads, duration, ramp-up)
   - Supports multiple test scenarios
 
@@ -799,7 +799,7 @@ Use the Data Seeder Service to populate your database:
 POST http://localhost:8088/seed/full-dataset?customerCount=100&minAccountsPerCustomer=1&maxAccountsPerCustomer=3
 ```
 
-### 5. Run Performance Tests
+### 5. Run Tests
 
 Make sure Jmeter is installed and Navigate to the jmeter-tests directory and run:
 
@@ -830,7 +830,7 @@ cd jmeter-tests
 - All services will register with Eureka automatically
 - API Gateway provides unified access to all services
 - Use Data Seeder Service for generating realistic test data
-- Performance tests require JMeter to be installed or available in the jmeter-tests directory
+- Performance and load tests require JMeter to be installed or available in the jmeter-tests directory
 
 ---
 
