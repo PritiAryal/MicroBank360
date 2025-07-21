@@ -542,6 +542,181 @@ The **Data Seeder Service** is a dedicated microservice designed to generate rea
 
 ### Architecture Components
 
+```mermaid
+ sequenceDiagram
+                participant Client
+                participant Gateway
+                participant DataSeeder
+                participant CircuitBreaker
+                participant CustomerService
+                participant AccountService
+                participant DataFaker
+                
+                Client->>Gateway: POST /seed/full-dataset?customerCount=1000
+                Gateway->>DataSeeder: Route via lb://DATA-SEEDER-SERVICE
+                DataSeeder->>DataFaker: Generate realistic customer data
+                DataFaker-->>DataSeeder: CustomerRequest objects
+                DataSeeder->>DataSeeder: Process in batches (100 records)
+                DataSeeder->>CircuitBreaker: WebClient.post() to Customer Service
+                CircuitBreaker->>CustomerService: Batch customer creation
+                CustomerService-->>CircuitBreaker: CustomerResponse objects
+                CircuitBreaker-->>DataSeeder: Success/Fallback response
+                DataSeeder->>DataFaker: Generate account data for customers
+                DataFaker-->>DataSeeder: AccountRequest objects
+                DataSeeder->>CircuitBreaker: WebClient.post() to Account Service
+                CircuitBreaker->>AccountService: Batch account creation
+                AccountService-->>CircuitBreaker: AccountResponse objects
+                CircuitBreaker-->>DataSeeder: Success/Fallback response
+                DataSeeder-->>Gateway: Combined dataset with metrics
+                Gateway-->>Client: Complete response with execution time
+```
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant APIGateway
+    participant DataSeeder
+    participant CircuitBreaker as Circuit Breaker
+    participant CustomerServiceClient
+    participant AccountServiceClient
+    participant CustomerService
+    participant AccountService
+    participant CustomerDB as Customer Database
+    participant AccountDB as Account Database
+    participant DataFaker
+
+    Note over DataSeeder: Three Main Operations:<br>1. Generate Customers<br>2. Generate Accounts for Existing Customers<br>3. Full Dataset Generation
+
+    %% Operation 1: Generate New Customers
+    rect rgb(200, 230, 255)
+    Note over Client, DataFaker: Scenario 1: Generate New Customers
+    Client->>APIGateway: POST /seed/customers/500
+    APIGateway->>DataSeeder: Route to DATA-SEEDER-SERVICE
+    
+    DataSeeder->>DataSeeder: Check usedEmails Set (in-memory)
+    DataSeeder->>DataFaker: Generate unique customer data
+    DataFaker-->>DataSeeder: CustomerRequest objects (batch of 100)
+    
+    loop Batch Processing (500 customers in batches of 100)
+        DataSeeder->>CustomerServiceClient: createCustomersBatch : List CustomerRequest
+        CustomerServiceClient->>CircuitBreaker: Apply circuit breaker protection
+        CircuitBreaker->>CustomerService: POST /customer (WebClient)
+        CustomerService->>CustomerDB: INSERT INTO customers
+        CustomerDB-->>CustomerService: Customer saved with ID
+        CustomerService-->>CircuitBreaker: CustomerResponse
+        CircuitBreaker-->>CustomerServiceClient: Success/Fallback
+        CustomerServiceClient-->>DataSeeder: List CustomerResponse
+        DataSeeder->>DataSeeder: delayElement(10ms) - Rate limiting
+    end
+    
+    DataSeeder-->>APIGateway: Success response with count & metrics
+    APIGateway-->>Client: 500 customers created
+    end
+
+    %% Operation 2: Generate Accounts for Existing Customers ONLY
+    rect rgb(200, 255, 200)
+    Note over Client, DataFaker: Scenario 2: Accounts for Existing Customers ONLY
+    Client->>APIGateway: POST /seed/accounts?minAccountsPerCustomer=1&maxAccountsPerCustomer=3
+    APIGateway->>DataSeeder: Route to DATA-SEEDER-SERVICE
+    
+    %% First: Fetch ALL existing customer IDs
+    DataSeeder->>CustomerServiceClient: getAllCustomerIds()
+    CustomerServiceClient->>CustomerService: GET /customer (WebClient)
+    CustomerService->>CustomerDB: SELECT * FROM customers
+    CustomerDB-->>CustomerService: All existing customers
+    CustomerService-->>CustomerServiceClient: Flux CustomerResponse
+    CustomerServiceClient->>CustomerServiceClient: .map(CustomerResponse::getId)
+    CustomerServiceClient-->>DataSeeder: Flux Long customerIds
+    DataSeeder->>DataSeeder: .collectList() to List Long customerIds
+    
+    alt No existing customers found
+        DataSeeder-->>APIGateway: customersProcessed: 0, accountsGenerated: 0, message: No existing customers found
+    else Existing customers found
+        loop For each existing customer ID
+            DataSeeder->>DataSeeder: Generate random account count (1-3)
+            DataSeeder->>DataFaker: Generate account data for customerId
+            DataFaker-->>DataSeeder: AccountRequest with customerId
+            DataSeeder->>DataSeeder: Check usedAccountNumbers Set
+        end
+        
+        loop Batch Processing (accounts in batches of 100)
+            DataSeeder->>AccountServiceClient: createAccountsBatch : List AccountRequest
+            AccountServiceClient->>CircuitBreaker: Apply circuit breaker protection
+            CircuitBreaker->>AccountService: POST /account WebClient
+            AccountService->>AccountDB: INSERT INTO accounts with customerId FK
+            AccountDB-->>AccountService: Account saved with ID
+            AccountService-->>CircuitBreaker: AccountResponse
+            CircuitBreaker-->>AccountServiceClient: Success/Fallback
+            AccountServiceClient-->>DataSeeder: List AccountResponse 
+            DataSeeder->>DataSeeder: delayElement(10ms) - Rate limiting
+        end
+        
+        DataSeeder-->>APIGateway: customersProcessed: X, accountsGenerated: Y
+    end
+    APIGateway-->>Client: Accounts created for existing customers only
+    end
+
+    %% Operation 3: Full Dataset Generation
+    rect rgb(255, 200, 200)
+    Note over Client, DataFaker: Scenario 3: Full Dataset Generation
+    Client->>APIGateway: POST /seed/full-dataset?customerCount=1000&minAccountsPerCustomer=1&maxAccountsPerCustomer=4
+    APIGateway->>DataSeeder: Route to DATA-SEEDER-SERVICE
+    
+    %% Step 1: Generate customers first
+    DataSeeder->>DataSeeder: generateCustomers(1000)
+    Note over DataSeeder, CustomerService: (Same process as Scenario 1)
+    DataSeeder->>DataSeeder: Extract customerIds from created customers
+    
+    %% Step 2: Generate accounts for the newly created customers
+    DataSeeder->>DataSeeder: generateAccountsForCustomers(customerIds, 1, 4)
+    loop For each new customer ID
+        DataSeeder->>DataFaker: Generate 1-4 accounts per customer
+        DataFaker-->>DataSeeder: AccountRequest objects with customerId
+    end
+    
+    loop Batch Processing
+        DataSeeder->>AccountServiceClient: createAccountsBatch List AccountRequest
+        AccountServiceClient->>AccountService: POST /account
+        AccountService->>AccountDB: INSERT accounts with FK to customers
+        AccountDB-->>AccountService: Success
+        AccountService-->>DataSeeder: AccountResponse objects
+    end
+    
+    DataSeeder-->>APIGateway: Complete dataset metrics
+    APIGateway-->>Client: Full dataset created
+    end
+
+    %% Data Export Operations
+    rect rgb(255, 255, 200)
+    Note over Client, AccountDB: Data Export Operations
+    Client->>APIGateway: GET /seed/export/jmeter-data.csv
+    APIGateway->>DataSeeder: Route request
+    
+    %% Fetch existing data for export
+    par Parallel Data Fetching
+        DataSeeder->>CustomerServiceClient: getAllCustomers()
+        CustomerServiceClient->>CustomerService: GET /customer
+        CustomerService->>CustomerDB: SELECT * FROM customers
+        CustomerDB-->>CustomerService: All customers
+        CustomerService-->>DataSeeder: List CustomerResponse
+    and
+        DataSeeder->>AccountServiceClient: getAllAccounts()
+        AccountServiceClient->>AccountService: GET /account
+        AccountService->>AccountDB: SELECT * FROM accounts
+        AccountDB-->>AccountService: All accounts
+        AccountService-->>DataSeeder: List AccountResponse 
+    end
+    
+    DataSeeder->>DataSeeder: Join customer and account data
+    DataSeeder->>DataSeeder: Generate CSV with customer-account relationships
+    DataSeeder-->>APIGateway: CSV file content
+    APIGateway-->>Client: Download jmeter_testdata.csv
+    end
+
+    %% Key Constraints and Validations
+    Note over DataSeeder: Key Business Rules:<br>✓ Accounts ONLY created for existing customers<br>✓ Unique email constraint (usedEmails Set)<br>✓ Unique account numbers (usedAccountNumbers Set)<br>✓ Circuit breaker protection on all service calls<br>✓ Retry with exponential backoff (3 attempts, 1s delay)<br>✓ Rate limiting with 10ms delays<br>✓ Batch processing (100 customers, 100 accounts per batch)
+```
+
 #### Configuration
 - **Port**: 8088
 - **Service Name**: DATA-SEEDER-SERVICE
@@ -655,9 +830,9 @@ DELETE http://localhost:8085/seed/cleanup
 
 ---
 
-## VII. Performance Testing Suite - JMeter Tests
+## VII. Testing - JMeter Tests
 
-The **jmeter-tests** directory contains a comprehensive performance testing suite designed for the MicroBank360 banking platform.
+The **jmeter-tests** directory contains a comprehensive performance and load testing suite designed for the MicroBank360 banking platform.
 
 ### Key Features
 
